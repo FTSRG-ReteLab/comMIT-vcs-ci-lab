@@ -3,6 +3,6 @@ Sample application for the version control systems and continuous integration la
 
 *This is italic.*
 
-**And bold.**
+And bold.
 
 'And monospace.'
