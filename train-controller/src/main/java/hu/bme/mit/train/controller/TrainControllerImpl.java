@@ -10,12 +10,13 @@ public class TrainControllerImpl implements TrainController {
 
 	@Override
 	public void followSpeed() {
+
+		referenceSpeed += step;
+
 		if (referenceSpeed < 0) {
 			referenceSpeed = 0;
-		} else {
-			referenceSpeed += step;
-		}
 
+		}
 		enforceSpeedLimit();
 	}
 
@@ -40,6 +41,11 @@ public class TrainControllerImpl implements TrainController {
 	@Override
 	public void setJoystickPosition(int joystickPosition) {
 		this.step = joystickPosition;		
+	}
+
+	@Override
+	public void emergencyStop() {
+		setSpeedLimit(0);
 	}
 
 }
